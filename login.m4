@@ -1,0 +1,6 @@
+PAM_MODULE_IF([HAVE_SECURETTY], [auth], [required], [pam_securetty.so ])
+PAM_MODULE_ADD([auth], [include], [system-local-login])
+PAM_MODULE_ADD([account], [include], [system-local-login])
+PAM_MODULE_ADD([passwd], [include], [system-local-login])
+PAM_MODULE_ADD([session], [optional], [pam_lastlog.so] DEBUG)
+PAM_MODULE_ADD([session], [include], [system-local-login])
